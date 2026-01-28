@@ -1,0 +1,86 @@
+I have optimized the workflow.
+Here is the Step-by-Step Execution Plan. This guide focuses on Logic and Process, forcing each developer to write their own implementation.
+Phase 1: The Setup (Day 1 - Morning)
+Goal: Ensure everyone is working on the same foundation.
+ * Dev 1 (Architect) creates the GitHub Repository.
+ * Dev 1 initializes the project with Vite + React + Tailwind.
+ * Dev 1 invites Devs 2, 3, and 4 as "Collaborators" on GitHub.
+ * All Devs clone the repo to their local machines.
+ * All Devs run npm install and npm run dev to verify the project works.
+ * All Devs create their branches (as defined below). STOP. Do not touch main again until Merge Day.
+Phase 2: Role-Specific Instructions (Days 2–8)
+Dev 1: The Architect (Data & Logic)
+You are building the "Brain" of the application.
+ * Step 1: Define the Data Model. Create a new file (e.g., GameContext.jsx). Define the "Initial State" object:
+   * tasks: An empty array [].
+   * user: An object with { health: 100, xp: 0 }.
+ * Step 2: Build the Provider. create the Context Provider component that wraps the entire application. This allows data to flow to all other components.
+ * Step 3: Write the "Add Task" Function.
+   * Create a function that accepts title, priority, and timeBudget.
+   * It must create a new task object with a unique ID (hint: use Date.now()).
+   * It must update the tasks state by creating a new array (spread operator ...) that includes the old tasks plus the new one.
+ * Step 4: Write the "Delete Task" Function.
+   * Create a function that accepts a taskId.
+   * Use the .filter() method to return a new array containing only tasks that do not match that ID.
+ * Step 5: Persistence.
+   * Add a useEffect that runs once on mount to check localStorage for saved data.
+   * Add a useEffect that runs whenever tasks change to save the new list to localStorage.
+Dev 2: The Engineer (The Timer)
+You are building the "Heart" of the application.
+ * Step 1: Create the Timer Hook. Create a custom file useKaboomTimer.js.
+   * This hook needs state for timeLeft (seconds) and isRunning (boolean).
+ * Step 2: The Interval Logic.
+   * Use useEffect to create a setInterval.
+   * Logic: Every 1 second (1000ms), check if timeLeft > 0.
+   * If Yes: Decrease timeLeft by 1.
+   * If No: Clear the interval and set isRunning to false (Time's Up).
+ * Step 3: The Component UI.
+   * Build the <BombBay /> component.
+   * Import your custom hook.
+   * Add buttons for "Start", "Pause", and "Defuse" (Complete).
+   * Challenge: Convert the timeLeft (seconds) into a readable format MM:SS using Math (division for minutes, modulo for seconds).
+ * Step 4: The Trigger.
+   * When the timer hits zero, it shouldn't just stop. It needs to call a function passed down from the parent (e.g., onExplode).
+Dev 3: The Gamifier (Rules & Consequences)
+You are building the "Referee" of the application.
+ * Step 1: The Health Component.
+   * Create a <HealthBar /> component that accepts currentHealth as a prop.
+   * Logic: Render a div whose width % equals the health value. Change its color (Green/Yellow/Red) based on how low the number is.
+ * Step 2: The Splash Damage Logic (Crucial).
+   * Write a function called handleExplosion inside the main Context (collaborate with Dev 1).
+   * Algorithm:
+     * Loop through the entire task list.
+     * Identify which tasks were not the active one.
+     * Multiply their timeBudget by 0.95 (5% reduction).
+     * Update the global task list with these new "damaged" values.
+ * Step 3: The Scoring Logic.
+   * Write a function calculateXP(minutes). Logic: Longer sessions = more points.
+   * Write a function calculateDamage(minutes). Logic: Longer sessions = more damage if failed.
+Dev 4: The Designer (UI/UX)
+You are building the "Face" of the application.
+ * Step 1: Tailwind Configuration.
+   * Open tailwind.config.js.
+   * Add your custom colors (e.g., neon-red, cyber-yellow) so the team uses consistent colors.
+ * Step 2: The Landing Page.
+   * Build the Hero section based on the image provided earlier. Use CSS gradients for the text.
+ * Step 3: Component Styling.
+   * Style the Task Card: It needs to look like a digital file or chip.
+   * Style the Timer: Use a Monospace font so the numbers don't jump around.
+ * Step 4: Visual Feedback.
+   * Create a CSS animation class .shake.
+   * Create a CSS animation class .flash-red.
+   * Instruct Dev 2 on how to apply these classes when timeLeft < 10.
+Phase 3: The Integration (Days 9-10)
+This is where you connect the parts.
+ * Merge Order:
+   * Dev 1 merges first (The Skeleton).
+   * Dev 3 merges second (The Rules).
+   * Dev 2 merges third (The Timer). Note: You will need to connect your onExplode trigger to Dev 3's handleExplosion function.
+   * Dev 4 merges last (The Skin). Wrap all the logic components in the pretty UI containers.
+ * Testing:
+   * Can I add a task?
+   * Does the timer actually count down?
+   * If I let it reach 0, does my health go down?
+   * Does the app look good on a phone?
+Immediate Next Step:
+Assign these 4 roles to your 4 team members right now and have them create their branches
