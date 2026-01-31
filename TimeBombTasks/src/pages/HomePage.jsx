@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import "./index.css";
+import "./HomePage.css";
 
 function HomePage() {
-  const navigate = useNavigate();
-
   return (
     <div className="landing">
       <div className="logo">💣</div>
@@ -20,10 +17,7 @@ function HomePage() {
         before time runs out, or face the consequences.
       </p>
 
-      <button 
-        className="start-btn"
-        onClick={() => navigate("/mission-control")}
-      >
+      <button className="start-btn">
         START YOUR MISSION
       </button>
     </div>
