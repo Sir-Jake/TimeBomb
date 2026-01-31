@@ -1,0 +1,456 @@
+/* Countdown Page Styles */
+.countdown-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 50%, #0f0f2e 100%);
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Courier New", monospace;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.countdown-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 0, 110, 0.03) 0px,
+      rgba(255, 0, 110, 0.03) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.countdown-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Back Button */
+.btn-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(100, 100, 100, 0.4);
+  border: 1px solid rgba(255, 170, 0, 0.5);
+  border-radius: 6px;
+  color: #ffaa00;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.btn-back:hover {
+  background: rgba(100, 100, 100, 0.6);
+  border-color: #ffaa00;
+  box-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
+}
+
+/* Header Stats */
+.countdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid #ff006e;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.stat-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.stat-label {
+  color: #ff006e;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+}
+
+.stat-value {
+  color: #00ff00;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* Health Bar Section */
+.health-bar-section {
+  margin-bottom: 30px;
+}
+
+.health-bar-container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 0, 110, 0.5);
+}
+
+.health-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ff006e;
+}
+
+.health-icon {
+  font-weight: bold;
+}
+
+.health-value {
+  color: #00ff00;
+}
+
+.health-bar {
+  width: 100%;
+  height: 20px;
+  background: rgba(100, 100, 100, 0.3);
+  border: 1px solid rgba(255, 0, 110, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.health-fill {
+  height: 100%;
+  background: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+  transition: width 0.3s ease;
+}
+
+/* Countdown Main Section */
+.countdown-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  flex: 1;
+}
+
+.bomb-timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.timer-circle {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 30px rgba(255, 0, 110, 0.8),
+    inset 0 0 30px rgba(255, 0, 110, 0.3);
+}
+
+.timer-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 72px;
+  font-weight: bold;
+  color: #ff006e;
+  text-shadow: 
+    0 0 20px rgba(255, 0, 110, 0.8),
+    0 0 40px rgba(255, 0, 110, 0.5);
+  letter-spacing: 4px;
+  font-family: "Digital-7", monospace;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 12px;
+  background: rgba(100, 100, 100, 0.3);
+  border: 1px solid rgba(255, 165, 0, 0.5);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffaa00 0%, #ff6600 100%);
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.8);
+  transition: width 0.1s linear;
+}
+
+/* Task Section */
+.task-section {
+  margin: 20px 0;
+}
+
+.task-card {
+  background: rgba(20, 20, 40, 0.8);
+  border: 2px solid #ff006e;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+}
+
+.task-info {
+  margin-bottom: 20px;
+}
+
+.task-title {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+}
+
+.task-details {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  margin: 0;
+  color: #cccccc;
+}
+
+.reward {
+  color: #00ff00;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.risk {
+  color: #ff0000;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.task-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-defuse,
+.btn-abort {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Courier New", monospace;
+}
+
+.btn-defuse {
+  background: linear-gradient(135deg, #ffaa00 0%, #ff6600 100%);
+  color: #000;
+  border-color: #ffaa00;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+}
+
+.btn-defuse:hover {
+  background: linear-gradient(135deg, #ffbb00 0%, #ff7700 100%);
+  box-shadow: 0 0 25px rgba(255, 170, 0, 0.8);
+  transform: scale(1.05);
+}
+
+.btn-defuse:active {
+  transform: scale(0.98);
+}
+
+.btn-abort {
+  background: transparent;
+  color: #ff006e;
+  border-color: #ff006e;
+  box-shadow: 0 0 10px rgba(255, 0, 110, 0.3);
+}
+
+.btn-abort:hover {
+  background: rgba(255, 0, 110, 0.1);
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.6);
+  transform: scale(1.05);
+}
+
+.btn-abort:active {
+  transform: scale(0.98);
+}
+
+/* Task Progress */
+.task-progress {
+  text-align: center;
+  color: #ffaa00;
+  font-size: 14px;
+  margin-top: 20px;
+  text-shadow: 0 0 5px rgba(255, 170, 0, 0.5);
+}
+
+/* Game Over / No Tasks */
+.countdown-page.game-over,
+.countdown-page.no-tasks {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.countdown-page h1 {
+  font-size: 48px;
+  color: #ff006e;
+  text-shadow: 0 0 20px rgba(255, 0, 110, 0.8);
+  margin: 0 0 20px 0;
+}
+
+.final-stats {
+  font-size: 20px;
+  color: #00ff00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.final-stats p {
+  margin: 10px 0;
+}
+
+.game-over-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-retry,
+.btn-home {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Courier New", monospace;
+  border: 2px solid;
+}
+
+.btn-retry {
+  background: linear-gradient(135deg, #ffaa00 0%, #ff6600 100%);
+  color: #000;
+  border-color: #ffaa00;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+}
+
+.btn-retry:hover {
+  background: linear-gradient(135deg, #ffbb00 0%, #ff7700 100%);
+  box-shadow: 0 0 25px rgba(255, 170, 0, 0.8);
+  transform: scale(1.05);
+}
+
+.btn-home {
+  background: transparent;
+  color: #ff006e;
+  border-color: #ff006e;
+  box-shadow: 0 0 10px rgba(255, 0, 110, 0.3);
+}
+
+.btn-home:hover {
+  background: rgba(255, 0, 110, 0.1);
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.6);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .countdown-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .stat-box {
+    flex: 1 1 45%;
+  }
+
+  .timer-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .timer-display {
+    font-size: 48px;
+  }
+
+  .task-title {
+    font-size: 18px;
+  }
+
+  .task-details {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .task-actions {
+    flex-direction: column;
+  }
+
+  .btn-defuse,
+  .btn-abort {
+    width: 100%;
+  }
+
+  .countdown-page h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-page {
+    padding: 10px;
+  }
+
+  .timer-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .timer-display {
+    font-size: 36px;
+  }
+
+  .countdown-header {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .stat-value {
+    font-size: 14px;
+  }
+}

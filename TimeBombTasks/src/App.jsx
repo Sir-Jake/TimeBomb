@@ -1,18 +1,16 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/HomePage";
-import MissionControl from "./pages/MissionControl";
+import HomePage from "./App/HomePage";
+import MissionControlPage from "./App/MissionControlPage";
+import CountdownPage from "./App/CountdownPage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div>
-      
-        <HomePage />
-        <MissionControl />
-      
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/mission-control" element={<MissionControlPage />} />
+      <Route path="/countdown" element={<CountdownPage />} />
+    </Routes>
   );
 }
 
