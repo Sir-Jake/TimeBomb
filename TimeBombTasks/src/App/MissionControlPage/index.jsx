@@ -1,8 +1,16 @@
+import { useContext } from "react";
+import { GameContext } from "../../Context/GameContext";
+import HealthBar from "../HealthBar";
+
 function MissionControlPage() {
-    return (
-        <div>
-            <h1>Mission Control Page coming soon</h1>
-        </div>
-    );
+  const { user } = useContext(GameContext);
+
+  return (
+    <div>
+      <HealthBar currentHealth={user.health} />
+      <h1>Mission Control Page coming soon</h1>
+    </div>
+  );
 }
+
 export default MissionControlPage;
