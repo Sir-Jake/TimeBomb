@@ -1,8 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 
-<<<<<<<<< Temporary merge branch 1
-=========
-
 const calculateXP = (minutes) => {
   return minutes * 20;
 };
@@ -31,7 +28,6 @@ const handleExplosion = (activeTaskId, minutes) => {
   );
 };
 
->>>>>>>>> Temporary merge branch 2
 export const GameContext = createContext();
 
 export const GameContextProvider = ({ children }) => {
