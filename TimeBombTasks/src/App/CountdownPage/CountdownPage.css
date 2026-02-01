@@ -1,8 +1,13 @@
 /* Countdown Page Styles */
 .countdown-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 50%, #0f0f2e 100%);
-  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    midnightblue 0%,
+    darkslateblue 50%,
+    navy 100%
+  );
+  color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -18,14 +23,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 0, 110, 0.03) 0px,
-      rgba(255, 0, 110, 0.03) 2px,
-      transparent 2px,
-      transparent 4px
-    );
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 0, 110, 0.03) 0px,
+    rgba(255, 0, 110, 0.03) 2px,
+    transparent 2px,
+    transparent 4px
+  );
   pointer-events: none;
   z-index: 0;
 }
@@ -37,14 +41,13 @@
 
 /* Back Button */
 .btn-back {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  align-self: flex-start;
+  margin-bottom: 20px;
   padding: 10px 20px;
   background: rgba(100, 100, 100, 0.4);
   border: 1px solid rgba(255, 170, 0, 0.5);
   border-radius: 6px;
-  color: #ffaa00;
+  color: orange;
   cursor: pointer;
   font-family: "Courier New", monospace;
   font-size: 14px;
@@ -55,7 +58,7 @@
 
 .btn-back:hover {
   background: rgba(100, 100, 100, 0.6);
-  border-color: #ffaa00;
+  border-color: orange;
   box-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
 }
 
@@ -67,7 +70,7 @@
   margin-bottom: 20px;
   padding: 15px 20px;
   background: rgba(0, 0, 0, 0.4);
-  border: 2px solid #ff006e;
+  border: 2px solid deeppink;
   border-radius: 8px;
   gap: 20px;
 }
@@ -80,13 +83,13 @@
 }
 
 .stat-label {
-  color: #ff006e;
+  color: deeppink;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
 }
 
 .stat-value {
-  color: #00ff00;
+  color: lime;
   font-size: 18px;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
@@ -109,7 +112,7 @@
   justify-content: space-between;
   margin-bottom: 8px;
   font-size: 14px;
-  color: #ff006e;
+  color: deeppink;
 }
 
 .health-icon {
@@ -117,7 +120,7 @@
 }
 
 .health-value {
-  color: #00ff00;
+  color: lime;
 }
 
 .health-bar {
@@ -132,7 +135,7 @@
 
 .health-fill {
   height: 100%;
-  background: #ff0000;
+  background: red;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
   transition: width 0.3s ease;
 }
@@ -169,7 +172,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  box-shadow: 
+  box-shadow:
     0 0 30px rgba(255, 0, 110, 0.8),
     inset 0 0 30px rgba(255, 0, 110, 0.3);
 }
@@ -183,8 +186,8 @@
 .timer-display {
   font-size: 72px;
   font-weight: bold;
-  color: #ff006e;
-  text-shadow: 
+  color: deeppink;
+  text-shadow:
     0 0 20px rgba(255, 0, 110, 0.8),
     0 0 40px rgba(255, 0, 110, 0.5);
   letter-spacing: 4px;
@@ -205,7 +208,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #ffaa00 0%, #ff6600 100%);
+  background: linear-gradient(90deg, orange 0%, darkorange 100%);
   box-shadow: 0 0 15px rgba(255, 170, 0, 0.8);
   transition: width 0.1s linear;
 }
@@ -217,7 +220,7 @@
 
 .task-card {
   background: rgba(20, 20, 40, 0.8);
-  border: 2px solid #ff006e;
+  border: 2px solid deeppink;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
@@ -230,7 +233,7 @@
 .task-title {
   font-size: 24px;
   margin: 0 0 10px 0;
-  color: #ffffff;
+  color: white;
   text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
 }
 
@@ -239,16 +242,16 @@
   gap: 20px;
   font-size: 14px;
   margin: 0;
-  color: #cccccc;
+  color: silver;
 }
 
 .reward {
-  color: #00ff00;
+  color: lime;
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
 .risk {
-  color: #ff0000;
+  color: red;
   text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
@@ -273,14 +276,14 @@
 }
 
 .btn-defuse {
-  background: linear-gradient(135deg, #ffaa00 0%, #ff6600 100%);
-  color: #000;
-  border-color: #ffaa00;
+  background: linear-gradient(135deg, orange 0%, darkorange 100%);
+  color: black;
+  border-color: orange;
   box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
 }
 
 .btn-defuse:hover {
-  background: linear-gradient(135deg, #ffbb00 0%, #ff7700 100%);
+  background: linear-gradient(135deg, orange 0%, darkorange 100%);
   box-shadow: 0 0 25px rgba(255, 170, 0, 0.8);
   transform: scale(1.05);
 }
@@ -291,8 +294,8 @@
 
 .btn-abort {
   background: transparent;
-  color: #ff006e;
-  border-color: #ff006e;
+  color: deeppink;
+  border-color: deeppink;
   box-shadow: 0 0 10px rgba(255, 0, 110, 0.3);
 }
 
@@ -309,7 +312,7 @@
 /* Task Progress */
 .task-progress {
   text-align: center;
-  color: #ffaa00;
+  color: orange;
   font-size: 14px;
   margin-top: 20px;
   text-shadow: 0 0 5px rgba(255, 170, 0, 0.5);
@@ -325,14 +328,14 @@
 
 .countdown-page h1 {
   font-size: 48px;
-  color: #ff006e;
+  color: deeppink;
   text-shadow: 0 0 20px rgba(255, 0, 110, 0.8);
   margin: 0 0 20px 0;
 }
 
 .final-stats {
   font-size: 20px;
-  color: #00ff00;
+  color: lime;
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
   margin-bottom: 30px;
 }
@@ -363,22 +366,22 @@
 }
 
 .btn-retry {
-  background: linear-gradient(135deg, #ffaa00 0%, #ff6600 100%);
-  color: #000;
-  border-color: #ffaa00;
+  background: linear-gradient(135deg, orange 0%, darkorange 100%);
+  color: black;
+  border-color: orange;
   box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
 }
 
 .btn-retry:hover {
-  background: linear-gradient(135deg, #ffbb00 0%, #ff7700 100%);
+  background: linear-gradient(135deg, orange 0%, darkorange 100%);
   box-shadow: 0 0 25px rgba(255, 170, 0, 0.8);
   transform: scale(1.05);
 }
 
 .btn-home {
   background: transparent;
-  color: #ff006e;
-  border-color: #ff006e;
+  color: deeppink;
+  border-color: deeppink;
   box-shadow: 0 0 10px rgba(255, 0, 110, 0.3);
 }
 
