@@ -9,30 +9,6 @@
   overflow-x: hidden;
 }
 
-.mission-control::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 0, 110, 0.03) 0px,
-      rgba(255, 0, 110, 0.03) 2px,
-      transparent 2px,
-      transparent 4px
-    );
-  pointer-events: none;
-  z-index: 0;
-}
-
-.mission-control > * {
-  position: relative;
-  z-index: 1;
-}
-
 /* Back Button */
 .btn-back {
   position: absolute;

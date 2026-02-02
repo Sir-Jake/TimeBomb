@@ -116,7 +116,7 @@ function MissionControlPage() {
               <option value="">-- Select a task --</option>
               {tasks.map((task) => (
                 <option key={task.id} value={task.id}>
-                  {task.title} (Lvl {Math.floor(Math.random() * 5)})
+                  {task.title} (Lvl {Math.floor(Math.random() *1)})
                 </option>
               ))}
             </select>
@@ -155,7 +155,7 @@ function MissionControlPage() {
               onChange={(e) => setDuration(Number(e.target.value))}
             />
             <div className="duration-labels">
-              <span>10m</span>
+              <span>2m</span>
               <span>120m</span>
             </div>
           </div>

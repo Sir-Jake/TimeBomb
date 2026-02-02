@@ -36,7 +36,7 @@ export const GameContextProvider = ({ children }) => {
     };
     setTasks([...tasks, newTask]);
   };
-
+ 
   //Deleting the tasks
   const deleteTask = (taskID) => {
     const updatedTasks = tasks.filter((task) => task.id !== taskID);
@@ -59,7 +59,6 @@ export const GameContextProvider = ({ children }) => {
     setTasks(updatedTasks);
   };
 
-  //const value = {}
   const value = {
     user,
     setUser,
