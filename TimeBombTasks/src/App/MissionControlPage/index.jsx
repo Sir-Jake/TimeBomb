@@ -149,7 +149,7 @@ function MissionControlPage() {
             <input
               type="range"
               className="duration-slider"
-              min="10"
+              min="2"
               max="120"
               value={duration}
               onChange={(e) => setDuration(Number(e.target.value))}
