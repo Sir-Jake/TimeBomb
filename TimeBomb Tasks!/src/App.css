@@ -1,0 +1,93 @@
+body {
+  background-color: #1e1e1e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#root, .app-container {
+  background-color: #292929;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ff3b3b88;
+  width: 360px;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 700;
+  color: #ff3b3b;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #ff3b3b;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 5px #ff3b3b55;
+  background-color: #3a3a3a;
+  color: #eee;
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 12px #ff3b3b;
+}
+
+button {
+  background-color: #ff3b3b;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff3b3baa;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+button:hover {
+  background-color: #ff5959;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+h1 {
+  font-size: 48px;
+  margin: 20px 0;
+  color: #ff3b3b;
+  text-shadow: 0 0 10px #ff3b3baa;
+}
+
+p {
+  font-size: 18px;
+  margin: 8px 0;
+  color: #ddd;
+}
+
+.task-info {
+  margin-bottom: 25px;
+}
+
+.status-bar {
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+.status-bar p {
+  margin: 6px 0;
+}
